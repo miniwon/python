@@ -4,13 +4,28 @@
 """
 
 from bs4 import BeautifulSoup
-from urllib import parse
-from urllib import request
+from urllib import parse, request
+# from urllib import request
 
+'''
+    함수명 : enum_links
+    인자  : html, base
+    리턴값 : result라는 리스트 반환
+    역할  : 인자로 들어온 html에서 a태그의 href들을 뽑아 result라는 리스트에 추가
+'''
 def enum_links(html,base):
     #-------------------------------------
-
+    soup = BeautifulSoup(html, 'html.parser')
+    links = soup.select('a')
+#    print(links)
     result = []
+    for a in links:
+        href = a.attrs['href']
+        # print(href)
+        url = parse.urljoin(base, href)
+        # print(url)
+        result.append(url)
+
     return result
 
 

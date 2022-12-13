@@ -7,7 +7,6 @@ get(‘http://url.com’)
 
 
 1. DOM 내부에 있는 여러 요소 중 첫 번째 요소(element) 찾는다.
-
 find_element_by_name(‘HTML_name’)
 find_element_by_id(‘HTML_id’)
 find_element_by_css_selector(‘#css > div.selector’)
@@ -28,7 +27,7 @@ get_attribute(name) : 요소의 속성 name에 해당하는 값을 추출
 is_displayed()      : 요소가 화면에 출력되는지 확인
 is_enabled()
 is_selected()
-execute_script()
+execute_script()    : 자바스크립트로 변환함
 save_screenshot(filename)
 submit()
 
